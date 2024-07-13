@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: WebShopFeatureTest-Logout
+  labels:
+    jobgroup: jobWebShopTests
+spec:
+  template:
+    metadata:
+      name: jobWebShopTests
+      labels:
+        jobgroup: jobWebShopTests
+    spec:
+      containers:
+      - name: logouttests
+        image: ernagendran2019/volvotest
+        command: ["radish -b . web_shop_logout_feature.feature --cucumber-json=web_shop_logout_feature_report.json; \
+		            python generateReportHTM.py -n "Logout feature test suite" -i web_shop_logout_feature_report.json -t \
+                        template.html -c c.css -o logout_feature_test_suite_report.html"]
+      restartPolicy: Never
