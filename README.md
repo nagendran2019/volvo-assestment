@@ -43,10 +43,9 @@
 
      NOTE- jobs is a folder which will have feature tests manifests yaml files as  given in below screenshot.
 
-<img width="643" alt="image" src="https://github.com/user-attachments/assets/9413f8e4-488f-4063-9229-ff4ab07d263a">
+Reference documentation- https://kubernetes.io/docs/tasks/job/parallel-processing-expansion/
 
-
-
+<img width="643" alt="image" src="https://github.com/user-attachments/assets/9413f8e4-488f-4063-9229-ff4ab07d263a"> .
 
 **Details**-
 
