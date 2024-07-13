@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Results</title>
+    <style>
+    {{ css_content }}
+    </style>
+  </head>
+  <body>
+
+    <h1>{{ general.title }}</h1>
+
+    <div class="report">
+      <table class="report-stats">
+        <thead>
+          <tr class="header">
+            <th></th>
+            <th></th>
+            <th colspan="4">Scenarios</th>
+            <th colspan="4">Steps</th>
+            <th></th>
+          </tr>
+          <tr class="header-row">
+            <th></th>
+            <th>Feature</th>
+
+            <!-- Scenarios -->
+            <th>Total</th>
+            <th>Passed</th>
+            <th>Failed</th>
+            <th>Skipped</th>
+
+            <!-- Steps -->
+            <th>Total</th>
+            <th>Passed</th>
+            <th>Failed</th>
+            <th>Skipped</th>
+
+            <th>Duration (nano seconds)</th>
+          </tr>
+        {% for report in report_stats.features %}
+          <tr>
+            <td></td>
+            <td class="bold">{{ report.name }}</td>
+
+            <!-- Scenarios -->
+            <td>{{ report.scenarios.total }}</td>
+            <td>{{ report.scenarios.passed }}</td>
+            <td>{{ report.scenarios.failed }}</td>
+            <td>{{ report.scenarios.skipped }}</td>
+
+            <!-- Steps -->
+            <td>{{ report.scenarios.steps.total }}</td>
+            <td>{{ report.scenarios.steps.passed }}</td>
+            <td>{{ report.scenarios.steps.failed }}</td>
+            <td>{{ report.scenarios.steps.skipped }}</td>
+
+            <td>{{ report.duration }}</td>
+          </tr>
+        {% endfor %}
+
+          <tr class="footer">
+            <td>Totals</td>
+            <td>{{ report_stats.total_features }}</td>
+
+            <td>{{ report_stats.total_scenarios }}</td>
+            <td>{{ report_stats.total_scenarios_passed }}</td>
+            <td>{{ report_stats.total_scenarios_failed }}</td>
+            <td>{{ report_stats.total_scenarios_skipped }}</td>
+
+            <td>{{ report_stats.total_steps }}</td>
+            <td>{{ report_stats.total_steps_passed }}</td>
+            <td>{{ report_stats.total_steps_failed }}</td>
+            <td>{{ report_stats.total_steps_skipped }}</td>
+
+            <td>{{ report_stats.total_duration }}</td>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+    <div class="results">
+
+      <span class="info"><b>INFO - Click below on Name of the feature to resize.</b></span>
+      <!-- Features -->
+      {% for result in results %}
+        {% set featureId = "feature-" ~ loop.index %}
+        <div class="feature-header {{ result.status }}" onclick="toggle('{{ featureId }}')">{{ result.keyword }}: {{ result.name }}
+          <span class="float-right">[{{ result.status | upper }}]</span>
+        </div>
+
+        <div id="{{ featureId }}" class="feature">
+
+          <!-- Scenarios -->
+          {% for scenario in result.elements %}
+            {% set scenarioId = featureId ~ "-scenario-" ~ loop.index %}
+            <div class="scenario-header" onclick="toggle('{{ scenarioId }}')">{{ scenario.keyword }}: {{ scenario.name }}</div>
+            <div id="{{ scenarioId }}" class="scenario">
+
+              <!-- Steps -->
+              <div class="steps">
+                {% for step in scenario.steps %}
+                  {% if step.result %}
+                    <div class="step {{ step.result.status }}">{{ step.keyword }}: {{ step.name }}
+                      <span class="float-right">{{ step.result.duration | round }} nano seconds</span>
+                    </div>
+
+                    <!-- Errors -->
+                    {% if step.result.error_message %}
+                      <div class="error-message">
+                      {% for msg in step.result.error_message %}
+                        <span class="error-message-line">{{ msg }}</span>
+                      {% endfor %}
+                      </div>
+                    {% endif %}
+
+                  {% else %}
+                    <div>{{ step.keyword }}: {{ step.name }}</div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <!-- End Steps -->
+
+            </div>
+          {% endfor %}
+          <!-- End Scenarios -->
+
+        </div>
+      {% endfor %}
+      <!-- End Features -->
+
+    </div>
+
+    <script>
+      function toggle(id) {
+          var visibility = document.getElementById(id).style.display;
+          if (visibility !== 'none') {
+              document.getElementById(id).style.display = 'none';
+          } else {
+            document.getElementById(id).style.display = 'block';
+          }
+      }
+    </script>
+  </body>
+</html>
