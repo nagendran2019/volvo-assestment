@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: WebShopFeatureTest-Cart
+  labels:
+    jobgroup: jobWebShopTests
+spec:
+  template:
+    metadata:
+      name: jobWebShopTests
+      labels:
+        jobgroup: jobWebShopTests
+    spec:
+      containers:
+      - name: carttests
+        image: ernagendran2019/volvotest
+        command: ["radish -b . web_shop_cart_feature.feature --cucumber-json=web_shop_cart_feature_report.json; \
+		            python generateReportHTM.py -n "Cart feature test suite" -i web_shop_cart_feature_report.json -t \
+                        template.html -c c.css -o cart_feature_test_suite_report.html"]
+      restartPolicy: Never
