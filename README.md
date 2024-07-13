@@ -36,6 +36,16 @@
 
 <img width="706" alt="image" src="https://github.com/user-attachments/assets/719865a6-6d95-47a3-b75a-e08aea185d1c">
 
+9. Running Test cases in parallel, below command can help in creating jobs to run tests in parallel. Will use manifests files of various feature test jobs (uploaded in same repo for reference) to create k8sjobs. Will be using k8s parallel processing approach. Command is below-
+
+**kubectl create -f ./jobs**
+
+NOTE- jobs is a folder which will have feature tests manifests yaml files as  given in below screenshot.
+
+<img width="643" alt="image" src="https://github.com/user-attachments/assets/9413f8e4-488f-4063-9229-ff4ab07d263a">
+
+
+
 **Details**-
 
 1. **Introduction**
