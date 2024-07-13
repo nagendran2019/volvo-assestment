@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Results</title>
+    <style>
+    body {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    font-size: 0.8em;
+  }
+  h1 {
+    font-size: 3em;
+    text-align: center;
+  }
+  table.report-stats {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  table.report-stats td, th {
+    border: 1px solid gray;
+    padding: 10px;
+  }
+  table.report-stats tr.header {
+    background-color: #66CCEE;
+  }
+  table.report-stats tr.footer {
+    background-color: grey;
+    font-weight: bold;
+  }
+  .bold {
+    font-weight: bold;
+  }
+  .info {
+    font-style: italic;
+  }
+  .float-right {
+    float: right;
+  }
+  .failed {
+    background-color: red;
+  }
+  .passed {
+    background-color: green;
+  }
+  .skipped {
+    background-color: rgb(19, 47, 148);
+  }
+  .error-message {
+    padding: 20px;
+    background-color: darkred;
+    font-style: italic;
+  }
+  div.results {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  div.feature-header {
+    padding: 10px;
+    font-weight: bold;
+  }
+  div.feature {
+    padding: 10px;
+    border-color: white;
+  }
+  div.scenario {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+  }
+  div.scenario-header {
+    padding-top: 10px;
+    padding-left: 10px;
+    font-weight: bold;
+  }
+  div.steps {
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+  div.step {
+    font-weight: bold;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+    </style>
+  </head>
+  <body>
+
+    <h1>Web Shop Full Test Suite</h1>
+
+    <div class="report">
+      <table class="report-stats">
+        <thead>
+          <tr class="header">
+            <th></th>
+            <th></th>
+            <th colspan="4">Scenarios</th>
+            <th colspan="4">Steps</th>
+            <th></th>
+          </tr>
+          <tr class="header-row">
+            <th></th>
+            <th>Feature</th>
+
+            <!-- Scenarios -->
+            <th>Total</th>
+            <th>Passed</th>
+            <th>Failed</th>
+            <th>Skipped</th>
+
+            <!-- Steps -->
+            <th>Total</th>
+            <th>Passed</th>
+            <th>Failed</th>
+            <th>Skipped</th>
+
+            <th>Duration (nano seconds)</th>
+          </tr>
+        
+          <tr>
+            <td></td>
+            <td class="bold">Cart functionality</td>
+
+            <!-- Scenarios -->
+            <td>3</td>
+            <td>3</td>
+            <td>0</td>
+            <td>0</td>
+
+            <!-- Steps -->
+            <td>9</td>
+            <td>9</td>
+            <td>0</td>
+            <td>0</td>
+
+            <td>2995201000</td>
+          </tr>
+        
+          <tr>
+            <td></td>
+            <td class="bold">Display login error messages</td>
+
+            <!-- Scenarios -->
+            <td>3</td>
+            <td>3</td>
+            <td>0</td>
+            <td>0</td>
+
+            <!-- Steps -->
+            <td>9</td>
+            <td>9</td>
+            <td>0</td>
+            <td>0</td>
+
+            <td>6163348998</td>
+          </tr>
+        
+          <tr>
+            <td></td>
+            <td class="bold">Logout from the Swag labs</td>
+
+            <!-- Scenarios -->
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+
+            <!-- Steps -->
+            <td>3</td>
+            <td>3</td>
+            <td>0</td>
+            <td>0</td>
+
+            <td>2593213000</td>
+          </tr>
+        
+
+          <tr class="footer">
+            <td>Totals</td>
+            <td>3</td>
+
+            <td>7</td>
+            <td>7</td>
+            <td>0</td>
+            <td>0</td>
+
+            <td>21</td>
+            <td>21</td>
+            <td>0</td>
+            <td>0</td>
+
+            <td>11751762998</td>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+    <div class="results">
+
+      <span class="info"><b>INFO - Click below on Name of the feature to resize.</b></span>
+      <!-- Features -->
+      
+        
+        <div class="feature-header " onclick="toggle('feature-1')">Feature: Cart functionality
+          <span class="float-right">[]</span>
+        </div>
+
+        <div id="feature-1" class="feature">
+
+          <!-- Scenarios -->
+          
+            
+            <div class="scenario-header" onclick="toggle('feature-1-scenario-1')">Scenario: Check whether user can see the cart badge get updated when add items to cart</div>
+            <div id="feature-1-scenario-1" class="scenario">
+
+              <!-- Steps -->
+              <div class="steps">
+                
+                  
+                    <div class="step passed">Given: Given User enters visual user Username and Password
+                      <span class="float-right">1552289000 nano seconds</span>
+                    </div>
+
+                    <!-- Errors -->
+                    
+
+                  
+                
+                  
+                    <div class="step passed">When: When User clicks add to cart button
+                      <span class="float-right">98410000 nano seconds</span>
+                    </div>
+
+                    <!-- Errors -->
+                    
+
+                  
+                
+                  
+                    <div class="step passed">Then: Then User should see the updated cart icon
+                      <span class="float-right">49159000 nano seconds</span>
+                    </div>
+
+                    <!-- Errors -->
+                    
+
+                  
+                
+              </div>
+              <!-- End Steps -->
+
+            </div>
+          
+            
+            <div class="scenario-header" onclick="toggle('feature-1-scenario-2')">Scenario: Check whether user can see the cart items added to cart</div>
+            <div id="feature-1-scenario-2" class="scenario">
+
+              <!-- Steps -->
+              <div class="steps">
+                
+                  
+                    <div class="step passed">Given: Given User enters visual user Username and Password
+                      <span class="float-right">401654000 nano seconds</span>
+                    </div>
+
+                    <!-- Errors -->
+                    
+
+                  
+                
+                  
+                    <div class="step passed">When: When User clicks add to cart button
+                      <span class="float-right">94663000 nano seconds</span>
+                    </div>
+
+                    <!-- Errors -->
+                    
+
+                  
+                
+                  
+                    <div class="step passed">Then: Then User finds the cart items added to cart
+                      <span class="float-right">138664000 nano seconds</span>
+                    </div>
+
+                    <!-- Errors -->
+                    
+
+                  
+                
+              </div>
+              <!-- End Steps -->
+
+            </div>
+          
+            
+            <div class="scenario-header" onclick="toggle('feature-1-scenario-3')">Scenario: Check whether user can go to checkout from cart</div>
+            <div id="feature-1-scenario-3" class="scenario">
+
+              <!-- Steps -->
+              <div class="steps">
+                
+                  
+                    <div class="step passed">Given: Given User enters visual user Username and Password
+                      <span class="float-right">361460000 nano seconds</span>
+                    </div>
+
+                    <!-- Errors -->
+                    
+
+                  
+                
+                  
+                    <div class="step passed">When: When User clicks add to cart button
+                      <span class="float-right">93274000 nano seconds</span>
+                    </div>
+
+                    <!-- Errors -->
+                    
+
+                  
+                
+                  
+                    <div class="step passed">Then: Then User is now checked out
+                      <span class="float-right">205628000 nano seconds</span>
+                    </div>
+
+                    <!-- Errors -->
+                    
+
+                  
+                
+              </div>
+              <!-- End Steps -->
+
+            </div>
+          
+          <!-- End Scenarios -->
+
+        </div>
+      
+        
+        <div class="feature-header " onclick="toggle('feature-2')">Feature: Display login error messages
+          <span class="float-right">[]</span>
+        </div>
+
+        <div id="feature-2" class="feature">
+
+          <!-- Scenarios -->
+          
+            
+            <div class="scenario-header" onclick="toggle('feature-2-scenario-1')">Scenario: Check the error message when login with blank username and password</div>
+            <div id="feature-2-scenario-1" class="scenario">
+
+              <!-- Steps -->
+              <div class="steps">
+                
+                  
+                    <div class="step passed">Given: Given User should navigate to login page
+                      <span class="float-right">1044235000 nano seconds</span>
+                    </div>
+
+                    <!-- Errors -->
+                    
+
+                  
+                
+                  
+                    <div class="step passed">When: When User enters the empty Username and Password
+                      <span class="float-right">270175000 nano seconds</span>
+                    </div>
+
+                    <!-- Errors -->
+                    
+
+                  
+                
+                  
+                    <div class="step passed">Then: Then User should see the correct error message
+                      <span class="float-right">43484000 nano seconds</span>
+                    </div>
+
+                    <!-- Errors -->
+                    
+
+                  
+                
+              </div>
+              <!-- End Steps -->
+
+            </div>
+          
+            
+            <div class="scenario-header" onclick="toggle('feature-2-scenario-2')">Scenario: Check the error message when login with blank password</div>
+            <div id="feature-2-scenario-2" class="scenario">
+
+              <!-- Steps -->
+              <div class="steps">
+                
+                  
+                    <div class="step passed">Given: Given User should navigate to login page
+                      <span class="float-right">1046508999 nano seconds</span>
+                    </div>
+
+                    <!-- Errors -->
+                    
+
+                  
+                
+                  
+                    <div class="step passed">When: When User enters Username and no Password
+                      <span class="float-right">295856000 nano seconds</span>
+                    </div>
+
+                    <!-- Errors -->
+                    
+
+                  
+                
+                  
+                    <div class="step passed">Then: Then User should see the Password is required error message
+                      <span class="float-right">36590000 nano seconds</span>
+                    </div>
+
+                    <!-- Errors -->
+                    
+
+                  
+                
+              </div>
+              <!-- End Steps -->
+
+            </div>
+          
+            
+            <div class="scenario-header" onclick="toggle('feature-2-scenario-3')">Scenario: Check the user logs in successfully</div>
+            <div id="feature-2-scenario-3" class="scenario">
+
+              <!-- Steps -->
+              <div class="steps">
+                
+                  
+                    <div class="step passed">Given: Given User should navigate to login page
+                      <span class="float-right">1043871000 nano seconds</span>
+                    </div>
+
+                    <!-- Errors -->
+                    
+
+                  
+                
+                  
+                    <div class="step passed">When: When User enters correct Username and Password
+                      <span class="float-right">329001000 nano seconds</span>
+                    </div>
+
+                    <!-- Errors -->
+                    
+
+                  
+                
+                  
+                    <div class="step passed">Then: Then Navigate user to shop home page
+                      <span class="float-right">2053627999 nano seconds</span>
+                    </div>
+
+                    <!-- Errors -->
+                    
+
+                  
+                
+              </div>
+              <!-- End Steps -->
+
+            </div>
+          
+          <!-- End Scenarios -->
+
+        </div>
+      
+        
+        <div class="feature-header " onclick="toggle('feature-3')">Feature: Logout from the Swag labs
+          <span class="float-right">[]</span>
+        </div>
+
+        <div id="feature-3" class="feature">
+
+          <!-- Scenarios -->
+          
+            
+            <div class="scenario-header" onclick="toggle('feature-3-scenario-1')">Scenario: Logout from the Swag labs</div>
+            <div id="feature-3-scenario-1" class="scenario">
+
+              <!-- Steps -->
+              <div class="steps">
+                
+                  
+                    <div class="step passed">Given: Given User enters visual user Username and Password
+                      <span class="float-right">369596000 nano seconds</span>
+                    </div>
+
+                    <!-- Errors -->
+                    
+
+                  
+                
+                  
+                    <div class="step passed">When: When Navigate user to left sidebar
+                      <span class="float-right">2177735000 nano seconds</span>
+                    </div>
+
+                    <!-- Errors -->
+                    
+
+                  
+                
+                  
+                    <div class="step passed">Then: Then Logout user from web shop
+                      <span class="float-right">45882000 nano seconds</span>
+                    </div>
+
+                    <!-- Errors -->
+                    
+
+                  
+                
+              </div>
+              <!-- End Steps -->
+
+            </div>
+          
+          <!-- End Scenarios -->
+
+        </div>
+      
+      <!-- End Features -->
+
+    </div>
+
+    <script>
+      function toggle(id) {
+          var visibility = document.getElementById(id).style.display;
+          if (visibility !== 'none') {
+              document.getElementById(id).style.display = 'none';
+          } else {
+            document.getElementById(id).style.display = 'block';
+          }
+      }
+    </script>
+  </body>
+</html>
