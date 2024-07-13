@@ -2,22 +2,37 @@
 # How to run test suite-
 
 1. Test Suite image is containerized and below command can be used to pull the docker image. (Docker file is checkedin to this repo for reference).
-    **docker pull ernagendran2019/volvotest:latest**
+
+   **docker pull ernagendran2019/volvotest:latest**
+  
 2. Run docker container and bind the volume with /usr/src/app (work dir of the container). Binding volume to container's work dir will help in retaining test reports.
 3. Use below commands to run the test suites (Full or Feature wise run)
-    A. Full Test Suite Execution- Run below
-        **docker run -it ernagendran2019/volvotest /bin/bash -c "radish -b . web_shop_cart_feature.feature web_shop_login_feature.feature web_shop_logout_feature.feature --cucumber-json=<report-filename>.json"**
-    (OR)
-    B. To run Login Feature Tests- Run below
-        **docker run -it ernagendran2019/volvotest /bin/bash -c "radish -b . <feature-test-file-name>.feature --cucumber-json=<report-filename>.json"**
-          For Example-
-            **docker run -it ernagendran2019/volvotest /bin/bash -c "radish -b . web_shop_login_feature.feature --cucumber-json=<report-filename>.json"**
-3. In above commands, we have **"radish -b .", here "." means** the current directory. In Dockerfile, we have made workdir as the directory where all the code files are copied.
-5. We can also pull test reports out of docker container by running below command.
+
+   **A. Full Test Suite Execution- Run below**
+   
+      **docker run -it ernagendran2019/volvotest /bin/bash -c "radish -b . web_shop_cart_feature.feature web_shop_login_feature.feature web_shop_logout_feature.feature --cucumber-json=<report-filename>.json"**
+   
+   **(OR)**
+   
+   **B. To run Login Feature Tests- Run below**
+      
+     **docker run -it ernagendran2019/volvotest /bin/bash -c "radish -b . <feature-test-file-name>.feature --cucumber-json=<report-filename>.json"**
+
+    For Example-
+   
+      **docker run -it ernagendran2019/volvotest /bin/bash -c "radish -b . web_shop_login_feature.feature --cucumber-json=<report-filename>.json"**
+
+5. In above commands, we have **"radish -b .", here "." means** the current directory. In Dockerfile, we have made workdir as the directory where all the code files are copied.
+
+6. We can also pull test reports out of docker container by running below command.
+
     **docker cp <container id>:<source> <target location on host>**
-6. You may use below command to create HTML report out of json file (generated out of bdd tests execution from Radish in docker container).
-    **"python generateReportHTM.py -n "<NAME of the TEST REPORT>" -i <Input cucumber json report>.json -t template.html -o <output html file name>.html -c c.css"**
-7. We have published test reports to file share in Azure (https://volvotestfeed.file.core.windows.net/report/) but we will publish it as part of the Jenkins pipelines itself for quick feedback to the developers.
+   
+7. You may use below command to create HTML report out of json file (generated out of bdd tests execution from Radish in docker container).
+  
+   **"python generateReportHTM.py -n "<NAME of the TEST REPORT>" -i <Input cucumber json report>.json -t template.html -o <output html file name>.html -c c.css"**
+   
+8. We have published test reports to file share in Azure (https://volvotestfeed.file.core.windows.net/report/) but we will publish it as part of the Jenkins pipelines itself for quick feedback to the developers.
 
 <img width="706" alt="image" src="https://github.com/user-attachments/assets/719865a6-6d95-47a3-b75a-e08aea185d1c">
 
