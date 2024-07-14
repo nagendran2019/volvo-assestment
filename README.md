@@ -7,7 +7,7 @@
   
 2. Run docker container and bind the volume with /usr/src/app (work dir of the container). Binding volume to container's work dir will help in retaining test reports.
 
-3. Use below commands to run the test suites (Full or Feature wise run)
+3. Use below commands to run the test suites (Full test suite or Feature wise run)
 
    **A. Full Test Suite Execution- Run below**
    
