@@ -7,7 +7,7 @@
   
 2. Run docker container and bind the volume with /usr/src/app (work dir of the container). Binding volume to container's work dir will help in retaining test reports.
 
-3. Use below commands to run the test suites (Full or Feature wise run)
+3. Use below commands to run the test suites (Full test suite or Feature wise run)
 
    **A. Full Test Suite Execution- Run below**
    
@@ -46,6 +46,9 @@
 Reference documentation- https://kubernetes.io/docs/tasks/job/parallel-processing-expansion/
 
 <img width="643" alt="image" src="https://github.com/user-attachments/assets/9413f8e4-488f-4063-9229-ff4ab07d263a"> .
+
+## CICD Flow-
+![image](https://github.com/user-attachments/assets/b5345454-8eb8-4e83-aeb5-9baabd6d9db5)
 
 **Details**-
 
