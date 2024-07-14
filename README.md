@@ -50,7 +50,7 @@ Reference documentation- https://kubernetes.io/docs/tasks/job/parallel-processin
 **Details**-
 
 1. **Introduction**
-The purpose of this test suite is to test the user journey flow of a web shop using Python and Selenium. The stakeholders for this project include the business unit and management team.
+The purpose of this test suite is to test the user journey flow of a web shop (www.saucedemo.com) using Python and Selenium. The stakeholders for this project include the business unit and management team.
 
 2. **Objective**
 The objective is to assess the quality and stability of the user journey flow in the web shop through automated testing. This includes both browsing scenarios and purchasing flows for specific objects.
