@@ -47,6 +47,9 @@ Reference documentation- https://kubernetes.io/docs/tasks/job/parallel-processin
 
 <img width="643" alt="image" src="https://github.com/user-attachments/assets/9413f8e4-488f-4063-9229-ff4ab07d263a"> .
 
+## CICD Flow-
+![image](https://github.com/user-attachments/assets/b5345454-8eb8-4e83-aeb5-9baabd6d9db5)
+
 **Details**-
 
 1. **Introduction**
